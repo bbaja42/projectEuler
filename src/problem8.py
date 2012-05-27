@@ -23,13 +23,7 @@ Find the greatest product of five consecutive digits in the 1000-digit number.
 71636269561882670428252483600823257530420752963450
 '''
 
-import functools
-import operator
-
-
-def product(seq):
-    """Product of a sequence."""
-    return functools.reduce(operator.mul, seq, 1)
+from functools import reduce
 
 
 def find_product():
@@ -54,13 +48,13 @@ def find_product():
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450"""
-    max_product = 0
     size = 5
     digits = digits.replace("\n", "")
+    max_product = 1
     for i in range(len(digits) - size):
-        check_part = digits[i:i + size]
-        temp_product = product(int(d) for d in check_part)
-        max_product = max(temp_product, max_product)
+        max_product = max(reduce(lambda x, y: x * y,
+                                map(int, digits[i:i + size])),
+                           max_product)
     return max_product
 
 
