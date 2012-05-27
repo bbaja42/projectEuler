@@ -22,7 +22,7 @@ def is_prime(n):
     return True
 
 
-def find_product():
+def find_triplet():
     prime_counter = 1
     counter = 2
     while(prime_counter <= 10001):
@@ -31,10 +31,10 @@ def find_product():
             prime_counter += 1
     return counter
 
-print ("Found prime is {}".format(find_product()))
+print ("Found prime is {}".format(find_triplet()))
 
 
 import timeit
-t = timeit.Timer("find_product",
-                "from __main__ import find_product")
+t = timeit.Timer("find_triplet",
+                "from __main__ import find_triplet")
 print ("Average running time: {} seconds".format(t.timeit(10)))

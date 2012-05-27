@@ -26,7 +26,7 @@ Find the greatest product of five consecutive digits in the 1000-digit number.
 from functools import reduce
 
 
-def find_product():
+def find_triplet():
     digits = """
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
@@ -58,10 +58,10 @@ def find_product():
     return max_product
 
 
-print ("Found product is {}".format(find_product()))
+print ("Found product is {}".format(find_triplet()))
 
 
 import timeit
-t = timeit.Timer("find_product",
-                "from __main__ import find_product")
+t = timeit.Timer("find_triplet",
+                "from __main__ import find_triplet")
 print ("Average running time: {} seconds".format(t.timeit(10)))
