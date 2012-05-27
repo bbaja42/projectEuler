@@ -22,9 +22,8 @@ def find_triplet():
                 and a + b + sqrt(c) == top):
                     return int(a * b * sqrt(c))
 
-print ("Found triplet is {}".format(find_triplet()))
+print ("Found product of triplet is {}".format(find_triplet()))
 
-print (floor(sqrt(81)) == sqrt(81))
 
 import timeit
 t = timeit.Timer("find_triplet",

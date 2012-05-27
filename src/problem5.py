@@ -31,8 +31,6 @@ def find_smallest_disible():
     '''
     return lcmm(*range(1, 21))
 
-print
-
 print ("Smallest divisible is {}".format(find_smallest_disible()))
 
 import timeit
