@@ -211,7 +211,7 @@ def find_sum():
     result = sum(map(int, digits_str.splitlines()))
     return str(result)[:10]
 
-print ("Triangle number is {}".format(find_sum()))
+print ("First 10 numbers of sum are {}".format(find_sum()))
 
 import timeit
 t = timeit.Timer("find_sum", "from __main__ import find_sum")
