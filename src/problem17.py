@@ -22,26 +22,28 @@ def find_sum():
              "sixty", "seventy", "eighty", "ninety"]
     scales = ["hundred"]
     result = 11  # one thousand length
+    len_AND = 3
     for i in range(1, 1000):
         if i < 20:
             result += len(units[i])
-        elif i > 19 and i < 100:
+        elif i >= 20 and i < 100:
             pri = int(str(i)[0])
             seg = int(str(i)[1])
             result += len(tens[pri])
             result += len(units[seg])
-        elif i > 99:
+        elif i >= 100:
             pri = int(str(i)[0])
             seg = int(str(i)[1])
             ter = int(str(i)[2])
-            result += len(scales[0]) + len(units[pri]) + 3  # X hundred + AND
+            result += len(scales[0]) + \
+                len(units[pri]) + len_AND  # hundred + AND
             if seg == 1:
                 result += len(units[int(str(1) + str(ter))])
             else:
                 result += len(tens[seg])
                 result += len(units[ter])
             if seg == 0 and ter == 0:
-                result += -3  # no AND in 100, 200...
+                result -= len_AND  # no AND in 100, 200...
     return result
 
 print ("Sum of digits is {}".format(find_sum()))
