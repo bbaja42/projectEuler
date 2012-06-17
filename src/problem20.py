@@ -16,7 +16,7 @@ def digits_sum():
     return result
 
 
-print ("Number of Sundays is {}".format(digits_sum()))
+print ("Sum of digits is {}".format(digits_sum()))
 
 import timeit
 t = timeit.Timer("digits_sum", "from __main__ import digits_sum")
