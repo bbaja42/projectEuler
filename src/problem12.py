@@ -22,6 +22,9 @@ What is the value of
 
 
 def divisors(n):
+    '''
+    Return number of divisors for given number
+    '''
     count = 0
     div = 1
     while div * div <= n:
